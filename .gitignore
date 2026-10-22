@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Playwright generated files
+playwright-report/
+test-results/
+
+# Allure generated files
+allure-results/
+allure-report/
+
+# Secrets
+.env
+.env.*
+!.env.example
