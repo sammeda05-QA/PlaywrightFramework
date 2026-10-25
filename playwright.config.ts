@@ -27,15 +27,17 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: //['html'],
-          'allure-playwright',
+ reporter: [
+  ['list'],
+  ['allure-playwright', { resultsDir: 'allure-results' }],
+],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
    //  baseURL: 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login',
    // screenshot: 'only-on-failure',
-    trace: 'retain-on-failure',
-    video: 'retain-on-failure',
+    //trace: 'retain-on-failure',
+    //video: 'retain-on-failure',
 
       baseURL: process.env.BASE_URL,
     screenshot:'on',
